@@ -4,7 +4,34 @@ A tool-using AI agent built with LangGraph that follows the ReAct (Reason + Act)
 
 ---
 
+## How It Works
 
+```
+User Question
+      |
+      v
+LangGraph ReAct Agent  (LLaMA 3.3 70B via Groq)
+      |
+      v
+  Needs a tool?
+  /           \
+Yes            No
+  |              |
+  v              v
+Which tool?   Answer directly
+  /     \     from LLM knowledge
+date   rag_search
+tool      |
+  |       v
+  |   HuggingFaceEmbeddings
+  |   ChromaDB similarity_search (k=2)
+  |       |
+  v       v
+Tool result returned to agent
+      |
+      v
+  Final Answer
+```
 
 ---
 
