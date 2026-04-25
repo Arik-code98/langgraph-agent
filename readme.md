@@ -35,7 +35,11 @@ Tool result returned to agent
 
 ---
 
+## Tools
 
+**get_current_date** — Returns today's date. Used when the question involves the current time or date.
+
+**rag_search** — Performs semantic search over the ChromaDB vector store and retrieves the top-2 most relevant document chunks. Used when the question relates to the contents of the uploaded document.
 
 ---
 
